@@ -11,7 +11,7 @@ $routes->get('/', 'Home::index');
 
 
 //Eliminar
-
+$routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1');
 
 //Buscar
 
