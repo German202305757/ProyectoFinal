@@ -24,6 +24,13 @@ class AdoptantesController extends BaseController
         $adoptante->insert($datos);
         return $this->index();
     }
+    
+        public function buscarAdoptante($codigo){
+        echo "codigo seleccionado para busqueda: ".$codigo;
+        $adoptante = new AdoptantesModel();
+        $datos['datos'] = $adoptante->where('id_adoptante',$codigo)->first();
+        return view('form_editar_adoptante',$datos);
+    }
     public function eliminarAdoptante($id_adoptante)
     {
         $usuario = new \App\Models\UsuariosModel();

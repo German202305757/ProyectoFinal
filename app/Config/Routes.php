@@ -15,7 +15,7 @@ $routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1')
 $routes->get('eliminar_adoptante/(:num)','AdoptantesController::eliminarAdoptante/$1');
 
 //Buscar
-
+$routes->get('buscar_adoptante/(:num)','AdoptantesController::buscarAdoptante/$1');
 
 //Modificar}
 $routes->post('modificar_adoptante', 'AdoptantesController::modificarAdoptante');
