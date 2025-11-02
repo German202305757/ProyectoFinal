@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('adoptante','AdoptantesController::index');
 
 //Agregar
 $routes->post('agregar_adoptante','AdoptantesController::agregarAdoptante');

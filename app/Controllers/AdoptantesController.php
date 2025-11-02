@@ -7,6 +7,12 @@ use App\Models\UsuariosModel;
 
 class AdoptantesController extends BaseController
 {
+    public function index(): string
+    {
+        $adoptante = new AdoptantesModel();
+        $datos['datos'] = $adoptante->findAll();
+        return view('adoptante',$datos);
+    }
 
      public function agregarAdoptante(){
         $adoptante = new AdoptantesModel();
@@ -24,7 +30,7 @@ class AdoptantesController extends BaseController
         $adoptante->insert($datos);
         return $this->index();
     }
-    
+
         public function buscarAdoptante($codigo){
         echo "codigo seleccionado para busqueda: ".$codigo;
         $adoptante = new AdoptantesModel();
