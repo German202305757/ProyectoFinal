@@ -24,5 +24,21 @@ class AdoptantesController extends BaseController
         $adoptante->insert($datos);
         return $this->index();
     }
+    public function eliminarAdoptante($id_adoptante)
+    {
+        $usuario = new \App\Models\UsuariosModel();
+        $adoptante = new \App\Models\AdoptantesModel();
+
+        $usuariosAsociados = $usuario->where('id_adoptante', $id_adoptante)->findAll();
+
+        if (!empty($usuariosAsociados)) {
+            session()->setFlashdata('error', 'No se puede eliminar el adoptante porque tiene usuarios asignados.');
+            return redirect()->to(base_url('adoptante'));
+        }
+
+        $adoptante->delete($id_adoptante);
+        session()->setFlashdata('success', 'Adoptante eliminado correctamente.');
+        return redirect()->to(base_url('adoptante'));
+    }   
 
 }
