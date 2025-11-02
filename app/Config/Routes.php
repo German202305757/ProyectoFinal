@@ -17,3 +17,4 @@ $routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1')
 
 
 //Modificar
+$routes->post('modificar_usuario', 'UsuariosController::modificarUsuario');
