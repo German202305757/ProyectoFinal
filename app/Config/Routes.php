@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 //Agregar
-
+$routes->post('agregar_adoptante','AdoptantesController::agregarAdoptante');
 
 //Eliminar
 $routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1');
