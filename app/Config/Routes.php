@@ -17,3 +17,15 @@ $routes->get('/', 'Home::index');
 
 
 //Modificar
+
+
+//inicio de sesion
+$routes->get('/', 'Home::index');
+$routes->get('autores','AutoresController::index');
+$routes->post('iniciar_sesion','UsuariosController::index');
+$routes->get('cerrar_sesion','UsuariosController::cerrarSesion');
+
+
+$routes->get('menu_admin','Home::verMenuAdmin');
+$routes->get('menu_editor','Home::verMenuEditor');
+$routes->get('menu_cliente','Home::verMenuClientes');
