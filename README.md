@@ -63,3 +63,21 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+
+#Registro de commits 003 y 004
+Proyecto final archivos agregados: 
+feature/inicio de sesión
+
++	app/Views/login.php
++	app/Controllers/UsuariosController.php 
++	app/Models/UsuariosModel.php
+M	app/Controllers/Home.php
+M	.env
+M	app/Config/App.php
+
+feature/menus
++	app/Views/menu_admin.php
++	app/Views/menu_cliente.php
++	app/Views/menu_editor.php
+M	app/Config/Routes.php -> $routes->post('iniciar_sesion','UsuariosController::index');
