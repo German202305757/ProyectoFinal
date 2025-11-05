@@ -11,7 +11,7 @@ $routes->get('/', 'Home::index');
 
 
 //Eliminar
-
+$routes->get('eliminar_citas/(:num)','CitasController::eliminarCitas/$1');
 
 //Buscar
 
