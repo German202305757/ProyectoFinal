@@ -17,3 +17,4 @@ $routes->get('/', 'Home::index');
 
 
 //Modificar
+$routes->post('modificar_mascotas','MascotasController::modificarMascotas');
