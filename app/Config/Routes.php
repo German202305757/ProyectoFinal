@@ -8,7 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 //Agregar
-
+$routes->get('citas','CitasController::index');
+$routes->post('agregar_citas','CitasController::agregarCitas');
 
 //Eliminar
 
