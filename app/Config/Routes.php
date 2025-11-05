@@ -5,10 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-
 //Agregar
-
+$routes->get('/', 'Home::index');
+$routes->get('mascotas','MascotasController::index');
+$routes->post('agregar_mascotas','MascotasController::agregarMascotas');
 
 //Eliminar
 
