@@ -14,6 +14,6 @@ $routes->get('/', 'Home::index');
 
 
 //Buscar
-
+$routes->get('buscar_citas/(:num)','CitasController::buscarCitas/$1');
 
 //Modificar
