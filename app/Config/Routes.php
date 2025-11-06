@@ -7,8 +7,10 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
-//Agregar
+$routes->get('historialmedico','HistorialMedicoController::index');
 
+//Agregar
+$routes->post('agregarregistro','HistorialMedicoController::agregarregistro');
 
 //Eliminar
 
