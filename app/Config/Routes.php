@@ -8,7 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 //Agregar
-
+$routes->get('solicitudes','SolicitudesController::index');
+$routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
 
 //Eliminar
 
