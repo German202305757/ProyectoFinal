@@ -11,7 +11,7 @@ $routes->get('/', 'Home::index');
 
 
 //Eliminar
-
+$routes->get('eliminarregistro/(:num)','HistorialMedicoController::eliminarregistro/$1');
 
 //Buscar
 
