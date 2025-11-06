@@ -22,8 +22,8 @@ $routes->get('/', 'Home::index');
 //inicio de sesion
 $routes->get('/', 'Home::index');
 $routes->get('autores','AutoresController::index');
-$routes->post('iniciar_sesion','UsuariosController::index');
-$routes->get('cerrar_sesion','UsuariosController::cerrarSesion');
+$routes->post('iniciar_sesion','LoginController::index');
+$routes->get('cerrar_sesion','LoginController::cerrarSesion');
 
 
 $routes->get('menu_admin','Home::verMenuAdmin');
