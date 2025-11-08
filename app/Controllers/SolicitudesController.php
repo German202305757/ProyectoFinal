@@ -27,6 +27,12 @@ class SolicitudesController extends BaseController
         $solicitud->insert($datos);
         return $this->index();
     }
+
+   public function buscarSolicitud($codigo){
+        echo "codigo seleccionado para busqueda: ". $codigo;
+        $solicitud = new SolicitudesModel();  
+        $datos['datos']= $solicitud->where('id_solicitud',$codigo)->first();
+        return view('form_editar_solicitud',$datos);
     public function modificarSolicitud(){
         $solicitud=new SolicitudesModel();
         $datos=[
