@@ -50,4 +50,22 @@ class MascotasController extends BaseController
         $datos['datos']= $animal->where('id_animal',$codigo)->first();       
         return view('form_editar_mascotas',$datos);
     }
+
+       public function modificarMascotas(){    
+        $animal=new MascotasModel();       
+        $datos=[
+            'id_animal'=> $this-> request->getPost('txt_id'),
+            'nombre'=> $this-> request->getPost('txt_nombre'),
+            'raza'=> $this-> request->getPost('txt_raza'),
+            'especie'=> $this-> request->getPost('txt_especie'),
+            'vacunas'=> $this-> request->getPost('txt_vacunas'),
+            'esterilizado'=> $this-> request->getPost('txt_esterilizado'),
+            'edad'=> $this-> request->getPost('txt_edad'),
+            'estado_disponibilidad'=> $this-> request->getPost('txt_estado'),
+        ];
+      
+        $codigo = $this->request->getpost('txt_id');       
+        $animal->update($codigo, $datos);       
+        return $this->index();
+    }
 }
