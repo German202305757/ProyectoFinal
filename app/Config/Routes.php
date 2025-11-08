@@ -45,6 +45,7 @@ $routes->get('citas','CitasController::index');
 $routes->post('agregar_citas','CitasController::agregarCitas');
 
 //Eliminar
+$routes->get('eliminar_solicitud/(:num)','SolicitudesController::eliminarSolicitud/$1');
 $routes->get('eliminar_mascotas/(:num)','MascotasController::eliminarMascotas/$1');
 $routes->get('eliminar_citas/(:num)','CitasController::eliminarCitas/$1');
 
