@@ -14,6 +14,8 @@ $routes->get('usuarios','UsuariosController::index');
 $routes->get('adoptante','AdoptantesController::index');
 
 //Agregar
+$routes->get('solicitudes','SolicitudesController::index');
+$routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
 $routes->get('mascotas','MascotasController::index');
 $routes->post('agregar_mascotas','MascotasController::agregarMascotas');
 
