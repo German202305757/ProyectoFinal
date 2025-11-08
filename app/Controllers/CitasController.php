@@ -28,4 +28,11 @@ class CitasController extends BaseController
         $citas->insert($datos);        
         return $this->index();
     }
+
+      public function eliminarCitas($id){
+        echo "Codigo Seleccionado: ". $id;        
+        $citas = new CitasModel();        
+        $citas->delete($id); 
+        return $this->index();
+    }
 }

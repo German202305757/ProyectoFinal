@@ -15,6 +15,7 @@ $routes->post('agregar_citas','CitasController::agregarCitas');
 $routes->post('agregar_adoptante','AdoptantesController::agregarAdoptante');
 
 //Eliminar
+$routes->get('eliminar_citas/(:num)','CitasController::eliminarCitas/$1');
 $routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1');
 $routes->get('eliminar_adoptante/(:num)','AdoptantesController::eliminarAdoptante/$1');
 
