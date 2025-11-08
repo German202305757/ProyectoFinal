@@ -1,0 +1,4 @@
+CRITICAL - 2025-11-08 04:15:37 --> ErrorException: Cannot redeclare App\Controllers\MascotasController::eliminarMascotas()
+[Method: GET, Route: mascotas]
+in APPPATH\Controllers\MascotasController.php on line 40.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
