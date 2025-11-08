@@ -39,4 +39,11 @@ class SolicitudesController extends BaseController
         return $this->index();
     }
 
+
+        public function eliminarSolicitud($id){
+        echo "Codigo Seleccionado: ". $id;
+        $solicitud = new SolicitudesModel();
+        $solicitud->delete($id); 
+        return $this->index();
+    }
 }
