@@ -15,6 +15,7 @@ $routes->get('adoptante','AdoptantesController::index');
 
 $routes->get('historialmedico','HistorialMedicoController::index');
 //Agregar
+$routes->post('agregarregistro','HistorialMedicoController::agregarregistro');
 $routes->get('solicitudes','SolicitudesController::index');
 $routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
 $routes->get('mascotas','MascotasController::index');
