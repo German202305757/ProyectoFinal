@@ -27,6 +27,18 @@ class SolicitudesController extends BaseController
         $solicitud->insert($datos);
         return $this->index();
     }
+    public function modificarSolicitud(){
+        $solicitud=new SolicitudesModel();
+        $datos=[
+            'estado_solicitud'=> $this-> request->getPost('txt_estado'),
+            'fecha_solicitud'=> $this-> request->getPost('txt_fecha'),
+            'comentario'=> $this-> request->getPost('txt_comentario'),
+        ];
+        $codigo = $this->request->getpost('txt_numero');
+        $solicitud->update($codigo, $datos);
+        return $this->index();
+    }
+
 
         public function eliminarSolicitud($id){
         echo "Codigo Seleccionado: ". $id;
