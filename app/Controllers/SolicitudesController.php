@@ -33,6 +33,7 @@ class SolicitudesController extends BaseController
         $solicitud = new SolicitudesModel();  
         $datos['datos']= $solicitud->where('id_solicitud',$codigo)->first();
         return view('form_editar_solicitud',$datos);
+   }
     public function modificarSolicitud(){
         $solicitud=new SolicitudesModel();
         $datos=[
