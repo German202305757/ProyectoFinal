@@ -42,6 +42,7 @@ class CitasController extends BaseController
         $datos['datos']= $citas->where('id_cita',$codigo)->first();       
         return view('form_editar_citas',$datos);
     }
+    
       public function modificarCitas(){    
         $citas=new CitasModel();       
         $datos=[

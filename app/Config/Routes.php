@@ -20,6 +20,7 @@ $routes->get('eliminar_usuario/(:num)','UsuariosController::eliminarUsuario/$1')
 $routes->get('eliminar_adoptante/(:num)','AdoptantesController::eliminarAdoptante/$1');
 
 //Buscar
+$routes->get('buscar_citas/(:num)','CitasController::buscarCitas/$1');
 $routes->get('buscar_usuario/(:num)','UsuariosController::buscarUsuario/$1');
 $routes->get('buscar_adoptante/(:num)','AdoptantesController::buscarAdoptante/$1');
 
