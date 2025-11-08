@@ -13,6 +13,7 @@ $routes->get('/', 'Home::index');
 $routes->get('usuarios','UsuariosController::index');
 $routes->get('adoptante','AdoptantesController::index');
 
+$routes->get('historialmedico','HistorialMedicoController::index');
 //Agregar
 $routes->get('solicitudes','SolicitudesController::index');
 $routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
@@ -29,6 +30,8 @@ $routes->get('buscar_mascotas/(:num)','MascotasController::buscarMascotas/$1');
 $routes->post('modificar_mascotas','MascotasController::modificarMascotas');
 
 
+//Agregar
+$routes->post('agregarregistro','HistorialMedicoController::agregarregistro');
 
 
 
@@ -68,6 +71,7 @@ $routes->get('buscar_usuario/(:num)','UsuariosController::buscarUsuario/$1');
 $routes->get('buscar_adoptante/(:num)','AdoptantesController::buscarAdoptante/$1');
 
 
+//Modificar
 //Modificar
 $routes->post('modificar_solicitud','SolicitudesController::modificarSolicitud');
 $routes->post('modificar_mascotas','MascotasController::modificarMascotas');
