@@ -26,5 +26,10 @@ public function agregarregistro(){
     return $this->index();
 }
 
+    public function eliminarregistro($id){
+        $historial = New HistorialMedicoModel();
+        $historial->delete($id);
+        return $this->index();
+    }  
 
 }
