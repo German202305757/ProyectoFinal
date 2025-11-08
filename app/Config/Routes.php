@@ -25,6 +25,7 @@ $routes->get('buscar_adoptante/(:num)','AdoptantesController::buscarAdoptante/$1
 
 
 //Modificar
+$routes->post('modificar_citas','CitasController::modificarCitas');
 $routes->post('modificar_usuario', 'UsuariosController::modificarUsuario');
 //Modificar}
 $routes->post('modificar_adoptante', 'AdoptantesController::modificarAdoptante');
