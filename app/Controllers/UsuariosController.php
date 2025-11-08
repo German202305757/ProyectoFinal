@@ -49,4 +49,10 @@ class UsuariosController extends BaseController
 
         return redirect()->to(base_url('usuarios'));
     }
+        public function buscarUsuario($codigo){
+        echo "codigo seleccionado para busqueda: ".$codigo;
+        $usuario = new UsuariosModel();
+        $datos['datos'] = $usuario->where('id_usuario',$codigo)->first();
+        return view('form_editar_usuario',$datos);
+    }
 }
