@@ -10,6 +10,8 @@ $routes->get('usuarios','UsuariosController::index');
 $routes->get('adoptante','AdoptantesController::index');
 
 //Agregar
+$routes->get('citas','CitasController::index');
+$routes->post('agregar_citas','CitasController::agregarCitas');
 $routes->post('agregar_adoptante','AdoptantesController::agregarAdoptante');
 
 //Eliminar
