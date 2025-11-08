@@ -27,7 +27,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">🐾 AdoptaAmor</a>
+          <a class="navbar-brand" href="../public/">🐾 AdoptaAmor</a>
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,8 +59,8 @@
                   <!-- Formulario de inicio de sesion -->
                   <form action="<?=base_url('iniciar_sesion')?>" method="POST"> 
                     <div class="form-floating mb-3">
-                      <input type="email" class="form-control" name="txt_email" id="txt_email" placeholder="name@example.com" required>
-                      <label for="txt_email">Correo Electrónico</label>
+                      <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" placeholder="usuario" required>
+                      <label for="txt_usuario">Usuario</label>
                     </div>
                     
                     <div class="form-floating mb-3">

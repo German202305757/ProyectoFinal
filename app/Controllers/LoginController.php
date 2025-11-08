@@ -1,27 +1,29 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\LoginModel;
 use App\Models\UsuariosModel;
 
 class LoginController extends BaseController
 {
     public function index()
     {
-        $email = $this-> request->getPost('txt_email');
+        $nombre = $this-> request->getPost('txt_usuario');
         $pass = $this-> request->getPost('txt_pass');
 
-        $usuario = new UsuariosModel();
+        $usuario = new LoginModel();
         
         //busqueda de datos y respuesta de usuario
-        $datos = $usuario ->select('nombre,tipo_usuario',)  
-        ->where('email',$email)
-        -> where('password', $pass) 
+        $datos = $usuario ->select('usuario,tipo_usuario')  
+        ->where('usuario',$nombre)
+        -> where('contraseña', $pass)
         -> first();
         
         // si $datos es true entonces -> crea sesión y redirige a páginas correspondientes segun id
         if ($datos){
             $sesion=[
-                'nombre'=>$datos['nombre'],
+                'usuario'=>$datos['usuario'],
                 'tipo'=>$datos['tipo_usuario'],
                 'activa'=>true
             ]; 

@@ -62,11 +62,12 @@ CREATE TABLE historial_medico (
 );
 
 CREATE TABLE usuarios (
-  id_usuario INT(11) NOT NULL,
+  id_usuario INT(11) NOT NULL auto_increment,
   usuario VARCHAR(50) NOT NULL UNIQUE,
   contraseña VARCHAR(255) NOT NULL,
   rol VARCHAR(50) NOT NULL,
   id_adoptante INT(11) DEFAULT NULL,
+  tipo_usuario int(11) default '3',
   PRIMARY KEY (id_usuario),
   FOREIGN KEY (id_adoptante) REFERENCES adoptante(id_adoptante)
 );
@@ -222,33 +223,37 @@ INSERT INTO historial_medico (id_historial, id_animal, vacunas_aplicadas, tratam
 (29, 29, 'Rabia (2025-03-20)', 'Ninguno', '2025-03-20'),
 (30, 30, 'Parvovirus (2025-03-22)', 'Tratamiento hormonal', '2025-03-22');
 
-INSERT INTO usuarios (id_usuario, usuario, contraseña, rol, id_adoptante) VALUES
-(1, 'admin_sys', 'admin123', 'administrador', NULL),
-(2, 'supervisor_vet', 'vetpass', 'administrador', NULL),
-(3, 'jperez', 'juan123', 'adoptante', 1),
-(4, 'mlopez', 'maria456', 'adoptante', 2),
-(5, 'cgomez', 'carlos789', 'adoptante', 3),
-(6, 'arodriguez', 'ana111', 'adoptante', 4),
-(7, 'psanchez', 'pedro222', 'adoptante', 5),
-(8, 'lmartinez', 'laura333', 'adoptante', 6),
-(9, 'jhernandez', 'javier444', 'adoptante', 7),
-(10, 'sdiaz', 'sofia555', 'adoptante', 8),
-(11, 'druiz', 'diego666', 'adoptante', 9),
-(12, 'etorres', 'elena777', 'adoptante', 10),
-(13, 'aflores', 'andres888', 'adoptante', 11),
-(14, 'lgarcia', 'lucia999', 'adoptante', 12),
-(15, 'rvargas', 'ricardo101', 'adoptante', 13),
-(16, 'vreyes', 'valeria202', 'adoptante', 14),
-(17, 'macosta', 'manuel303', 'adoptante', 15),
-(18, 'gmendoza', 'gabriela404', 'adoptante', 16),
-(19, 'fcano', 'fernando505', 'adoptante', 17),
-(20, 'sortiz', 'silvia606', 'adoptante', 18),
-(21, 'hnunez', 'hector707', 'adoptante', 19),
-(22, 'mcastro', 'monica808', 'adoptante', 20),
-(23, 'jmorales', 'jorge909', 'adoptante', 21),
-(24, 'ppena', 'paula112', 'adoptante', 22),
-(25, 'rgil', 'roberto223', 'adoptante', 23),
-(26, 'dleon', 'diana334', 'adoptante', 24),
-(27, 'epinto', 'esteban445', 'adoptante', 25),
-(28, 'adop_temp', 'temp123', 'adoptante', NULL);
+INSERT INTO usuarios (usuario, contraseña, rol, id_adoptante) VALUES
+('admin_sys', 'admin123', 'administrador', NULL),
+('supervisor_vet', 'vetpass', 'administrador', NULL),
+('edit', 'edit', 'editor', NULL),
+('jperez', 'juan123', 'adoptante', 1),
+('mlopez', 'maria456', 'adoptante', 2),
+('cgomez', 'carlos789', 'adoptante', 3),
+('arodriguez', 'ana111', 'adoptante', 4),
+('psanchez', 'pedro222', 'adoptante', 5),
+('lmartinez', 'laura333', 'adoptante', 6),
+('jhernandez', 'javier444', 'adoptante', 7),
+('sdiaz', 'sofia555', 'adoptante', 8),
+('druiz', 'diego666', 'adoptante', 9),
+('etorres', 'elena777', 'adoptante', 10),
+('aflores', 'andres888', 'adoptante', 11),
+('lgarcia', 'lucia999', 'adoptante', 12),
+('rvargas', 'ricardo101', 'adoptante', 13),
+('vreyes', 'valeria202', 'adoptante', 14),
+('macosta', 'manuel303', 'adoptante', 15),
+('gmendoza', 'gabriela404', 'adoptante', 16),
+('fcano', 'fernando505', 'adoptante', 17),
+('sortiz', 'silvia606', 'adoptante', 18),
+('hnunez', 'hector707', 'adoptante', 19),
+('mcastro', 'monica808', 'adoptante', 20),
+('jmorales', 'jorge909', 'adoptante', 21),
+('ppena', 'paula112', 'adoptante', 22),
+('rgil', 'roberto223', 'adoptante', 23),
+('dleon', 'diana334', 'adoptante', 24),
+('epinto', 'esteban445', 'adoptante', 25),
+('adop_temp', 'temp123', 'adoptante', NULL);
 
+UPDATE `refugio_animales`.`usuarios` SET `tipo_usuario` = '1' WHERE (`id_usuario` = '1');
+UPDATE `refugio_animales`.`usuarios` SET `tipo_usuario` = '1' WHERE (`id_usuario` = '2');
+UPDATE `refugio_animales`.`usuarios` SET `tipo_usuario` = '2' WHERE (`id_usuario` = '3');
