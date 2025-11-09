@@ -46,19 +46,19 @@
                 <a class="nav-link active" aria-current="page" href="#">Página Principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Citas</a>
+                <a class="nav-link" href="<?= base_url('citas') ?>">Citas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Mascotas</a>
+                <a class="nav-link" href="<?= base_url('mascotas') ?>">Mascotas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Solicitudes de Adopción</a>
+                <a class="nav-link" href="<?= base_url('solicitudes') ?>">Solicitudes de Adopción</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Historial Médico</a>
+                <a class="nav-link" href="<?= base_url('historialmedico') ?>">Historial Médico</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Créditos</a>
+                <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
               </li>
             </ul>
 
@@ -67,6 +67,7 @@
               <a href="<?= base_url('cerrar_sesion') ?>" class="btn btn-outline-light">Cerrar Sesión</a>
             </form>
           </div>
+
         </div>
       </nav>
     </header>
