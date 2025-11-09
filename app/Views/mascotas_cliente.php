@@ -31,26 +31,9 @@
           <div class="collapse navbar-collapse" id="navbarContenido">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= base_url('menu_admin') ?>">Página Principal</a>
+                <a class="nav-link active" aria-current="page" href="<?= base_url('menu_cliente') ?>">Página Principal</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('citas') ?>">Citas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('mascotas') ?>">Mascotas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('solicitudes') ?>">Solicitudes de Adopción</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('historialmedico') ?>">Historial Médico</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
-              </li>
+             
             </ul>
 
             <form class="d-flex">
@@ -90,17 +73,22 @@
                 <span class="visually-hidden">Siguiente</span>
             </button>
         </div>
+        <!--
         <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Agregar Nueva Mascota
         </button>
-
+        -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Mascota</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
+                    <!--
+
                     <div class="modal-body">
                         <form action="<?=base_url('agregar_mascotas');?>" method="post">
                             <label for="txt_id" class="form-label">Identificación del Animal</label>
@@ -126,6 +114,7 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
                     </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -157,11 +146,15 @@
                         <td> <?=$animal ['esterilizado'];?> </td>
                         <td> <?=$animal ['edad'];?> </td>
                         <td> <?=$animal ['estado_disponibilidad'];?> </td>
+                        
                         <td>
+                            <!--
                             <a href="<?= base_url('eliminar_mascotas/') . $animal['id_animal']; ?>" class="btn btn-danger btn-sm d-flex align-items-center justify-content-center gap-1"><i class="bi bi-x-circle-fill"></i> Eliminar </a>
                             <div class="mt-1"></div>
-                            <a href="<?= base_url('buscar_mascotas/') . $animal['id_animal']; ?>" class="btn btn-warning btn-sm d-flex align-items-center justify-content-center gap-1 text-dark"><i class="bi bi-pencil-fill"></i> Editar </a>
+                            -->
+                            <a href="<?= base_url('buscar_mascotas_solicitud/') . $animal['id_animal']; ?>" class="btn btn-warning btn-sm d-flex align-items-center justify-content-center gap-1 text-dark"><i class="bi bi-pencil-fill"></i> Adpotar </a>
                         </td>
+                        
                     </tr>
                     <?php
                     }

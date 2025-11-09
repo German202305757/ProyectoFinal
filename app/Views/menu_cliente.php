@@ -46,10 +46,10 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Mascotas</a>
+                <a class="nav-link" href="<?= base_url('mascotas_catalogo') ?>">Mascotas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Solicitudes de Adopción</a>
+                
               </li>
             </ul>
 
@@ -67,12 +67,12 @@
       <section class="py-5 text-center container" style="padding-top: 100px !important;">
         <div class="row py-lg-5">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Bienvenido: <?= session()->get('usuario') ?></h1>
+            <h1 class="fw-light">Bienvenido: <?= session()->get('usuario') ?> ID: <?= session()->get('adoptante') ?></h1>
             <h1 class="fw-light">Encuentra a tu Nuevo Mejor Amigo</h1>
             <p class="lead text-muted">Explora nuestros catálogo de perros, gatos y otros animales que necesitan un hogar amoroso. Tu próxima mascota te está esperando.</p>
             <p>
-              <a href="#" class="btn btn-primary my-2">Ver Mascotas Disponibles</a>
-              <a href="#" class="btn btn-secondary my-2">Cómo Adoptar</a>
+              <a href="<?= base_url('mascotas_catalogo') ?>" class="btn btn-primary my-2">Ver Mascotas Disponibles</a>
+              
             </p>
           </div>
         </div>

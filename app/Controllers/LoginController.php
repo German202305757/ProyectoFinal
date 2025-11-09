@@ -15,16 +15,17 @@ class LoginController extends BaseController
         $usuario = new LoginModel();
         
         //busqueda de datos y respuesta de usuario
-        $datos = $usuario ->select('usuario,tipo_usuario')  
+        $datos = $usuario ->select('usuario,tipo_usuario,id_adoptante')  
         ->where('usuario',$nombre)
         -> where('contraseña', $pass)
         -> first();
         
         // si $datos es true entonces -> crea sesión y redirige a páginas correspondientes segun id
         if ($datos){
-            $sesion=[
+            $sesion=[                
                 'usuario'=>$datos['usuario'],
                 'tipo'=>$datos['tipo_usuario'],
+                'adoptante'=>$datos['id_adoptante'],
                 'activa'=>true
             ]; 
             //crear variables de sesion acceder a ellos desde cualquier página

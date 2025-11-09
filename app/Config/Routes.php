@@ -11,13 +11,15 @@ $routes->get('mascotas','MascotasController::index');
 $routes->post('agregar_mascotas','MascotasController::agregarMascotas');
 $routes->get('/', 'Home::index');
 $routes->get('usuarios','UsuariosController::index');
-$routes->get('adoptante','AdoptantesController::index');
+$routes->get('adoptantes','AdoptantesController::index');
 
 $routes->get('historialmedico','HistorialMedicoController::index');
 //Agregar
 $routes->post('agregarregistro','HistorialMedicoController::agregarregistro');
 $routes->get('solicitudes','SolicitudesController::index');
-$routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
+$routes->post('agregar_solicitud','SolicitudesController::agregarSolicitud');
+$routes->get('buscar_solicitud/(:num)','SolicitudesController::buscarSolicitud/$1');
+
 $routes->get('mascotas','MascotasController::index');
 $routes->post('agregar_mascotas','MascotasController::agregarMascotas');
 
@@ -94,6 +96,10 @@ $routes->get('menu_admin','Home::verMenuAdmin');
 $routes->get('menu_editor','Home::verMenuEditor');
 $routes->get('menu_cliente','Home::verMenuClientes');
 
+$routes->get('mascotas_catalogo','MascotasController::catalogo');
+$routes->get('solicitud_cliente','SolicitudesController::solicitud');
+$routes->get('buscar_mascotas_solicitud/(:num)','MascotasController::buscarMascotasSolicitud/$1');
+$routes->post('agregar_solicitud_cliente','SolicitudesController::agregarSolicitud');
 //Registro
 $routes->get('registro', 'RegistroController::index');
 $routes->post('registro/guardar', 'RegistroController::guardar');

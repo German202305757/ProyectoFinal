@@ -12,10 +12,6 @@ class SolicitudesModel extends Model
 
 
     protected $allowedFields = [
-        'id_adoptante',
-        'id_animal',
-        'estado_solicitud',
-        'fecha_solicitud',
-        'comentario'
+        'id_solicitud','id_adoptante', 'id_animal', 'estado_solicitud', 'fecha_solicitud', 'comentario'
     ];
 }

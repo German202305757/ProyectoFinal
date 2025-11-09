@@ -11,6 +11,13 @@ class MascotasController extends BaseController
         $datos['datos']= $animal->findAll();      
         return view('mascotas', $datos);
     }
+    public function catalogo(): string
+    {
+        $animal= new MascotasModel();       
+        $datos['datos']= $animal->findAll();      
+        return view('mascotas_cliente', $datos);
+    }
+
     public function agregarMascotas()
     {
         $animal = new MascotasModel();       
@@ -42,6 +49,14 @@ class MascotasController extends BaseController
         $animal = new MascotasModel();    
         $datos['datos']= $animal->where('id_animal',$codigo)->first();       
         return view('form_editar_mascotas',$datos);
+    }
+     public function buscarMascotasSolicitud($codigo){
+        /* echo "codigo seleccionado para busqueda: ". $codigo;
+        echo session()->get('adoptante');
+        */
+        $animal = new MascotasModel();    
+        $datos['datos']= $animal->where('id_animal',$codigo)->first();       
+        return view('solicitud_cliente',$datos);
     }
 
        public function modificarMascotas(){    
