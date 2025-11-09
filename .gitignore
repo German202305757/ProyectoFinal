@@ -1,0 +1,26 @@
+# Ignorar todo dentro de la carpeta writable, excepto los .gitkeep
+/writable/*
+!/writable/.gitkeep
+
+# Volver a incluir carpetas específicas de writable si es necesario
+# (aunque es mejor ignorar todo su contenido)
+!/writable/cache/
+!/writable/debugbar/
+!/writable/logs/
+!/writable/session/
+!/writable/uploads/
+
+# Ignorar el contenido de esas carpetas
+/writable/cache/*
+!/writable/cache/.gitkeep
+/writable/debugbar/*
+!/writable/debugbar/.gitkeep
+/writable/logs/*
+!/writable/logs/.gitkeep
+/writable/session/*
+!/writable/session/.gitkeep
+/writable/uploads/*
+!/writable/uploads/.gitkeep
+
+# También es fundamental ignorar el archivo de entorno
+/env

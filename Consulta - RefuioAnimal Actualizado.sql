@@ -1,11 +1,11 @@
--- CREACIÓN DE BASE DE DATOS
+-- RECREACIÓN DE BASE DE DATOS
 DROP DATABASE IF EXISTS refugio_animales;
 CREATE DATABASE refugio_animales;
 USE refugio_animales;
 
 -- TABLAS
 CREATE TABLE adoptante (
-  id_adoptante INT(11) NOT NULL,
+  id_adoptante INT(11) NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
   edad INT(11) DEFAULT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE adoptante (
 );
 
 CREATE TABLE mascotas (
-  id_animal INT(11) NOT NULL,
+  id_animal INT(11) NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
   raza VARCHAR(100) DEFAULT NULL,
   especie VARCHAR(50) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE mascotas (
 );
 
 CREATE TABLE solicitudes (
-  id_solicitud INT(11) NOT NULL,
+  id_solicitud INT(11) NOT NULL AUTO_INCREMENT,
   id_adoptante INT(11) NOT NULL,
   id_animal INT(11) NOT NULL,
   estado_solicitud VARCHAR(50) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE solicitudes (
 );
 
 CREATE TABLE citas (
-  id_cita INT(11) NOT NULL,
+  id_cita INT(11) NOT NULL AUTO_INCREMENT,
   id_solicitud INT(11) DEFAULT NULL,
   fecha_cita DATE NOT NULL,
   hora_cita TIME NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE citas (
 );
 
 CREATE TABLE historial_medico (
-  id_historial INT(11) NOT NULL,
+  id_historial INT(11) NOT NULL AUTO_INCREMENT,
   id_animal INT(11) NOT NULL,
   vacunas_aplicadas TEXT DEFAULT NULL,
   tratamiento TEXT DEFAULT NULL,
@@ -62,74 +62,76 @@ CREATE TABLE historial_medico (
 );
 
 CREATE TABLE usuarios (
-  id_usuario INT(11) NOT NULL,
+  id_usuario INT(11) NOT NULL AUTO_INCREMENT,
   usuario VARCHAR(50) NOT NULL UNIQUE,
   contraseña VARCHAR(255) NOT NULL,
   rol VARCHAR(50) NOT NULL,
   id_adoptante INT(11) DEFAULT NULL,
+  tipo_usuario INT(11) DEFAULT '3',
   PRIMARY KEY (id_usuario),
   FOREIGN KEY (id_adoptante) REFERENCES adoptante(id_adoptante)
 );
 
--- DATOS Ingresados
-INSERT INTO adoptante (id_adoptante, nombre, apellido, edad, correo, dpi, telefono, direccion) VALUES
-(1, 'Juan', 'Pérez', 35, 'juan.perez@email.com', '123456789', '5551234', 'Calle Falsa 123'),
-(2, 'María', 'López', 28, 'maria.lopez@email.com', '987654321', '5555678', 'Avenida Siempreviva 742'),
-(3, 'Carlos', 'Gómez', 45, 'carlos.gomez@email.com', '112233445', '5559012', 'Bulevar Central 50'),
-(4, 'Ana', 'Rodríguez', 22, 'ana.rodriguez@email.com', '667788990', '5553456', 'Residencial Los Robles'),
-(5, 'Pedro', 'Sánchez', 50, 'pedro.sanchez@email.com', '543210987', '5557890', 'Zona 10, Edificio A'),
-(6, 'Laura', 'Martínez', 31, 'laura.martinez@email.com', '109876543', '5552345', 'Colonia Primavera'),
-(7, 'Javier', 'Hernández', 38, 'javier.hernandez@email.com', '345678901', '5556789', 'Calle del Sol 21'),
-(8, 'Sofía', 'Díaz', 25, 'sofia.diaz@email.com', '765432109', '5550123', 'Apartamento 3C'),
-(9, 'Diego', 'Ruiz', 42, 'diego.ruiz@email.com', '210987654', '5554567', 'Casa Blanca 8'),
-(10, 'Elena', 'Torres', 33, 'elena.torres@email.com', '876543210', '5558901', 'Sector El Carmen'),
-(11, 'Andrés', 'Flores', 29, 'andres.flores@email.com', '334455667', '5553344', 'La Arboleda'),
-(12, 'Lucía', 'García', 24, 'lucia.garcia@email.com', '778899001', '5557788', 'Villa Hermosa'),
-(13, 'Ricardo', 'Vargas', 55, 'ricardo.vargas@email.com', '112233440', '5551122', 'Avenida Las Américas'),
-(14, 'Valeria', 'Reyes', 27, 'valeria.reyes@email.com', '667788991', '5556677', 'Zona 15, Bloque B'),
-(15, 'Manuel', 'Acosta', 40, 'manuel.acosta@email.com', '543210980', '5550011', 'El Campanario'),
-(16, 'Gabriela', 'Mendoza', 30, 'gabriela.mendoza@email.com', '109876540', '5554455', 'Calle del Lago'),
-(17, 'Fernando', 'Cano', 48, 'fernando.cano@email.com', '345678900', '5558899', 'Residencial San Lucas'),
-(18, 'Silvia', 'Ortiz', 36, 'silvia.ortiz@email.com', '765432100', '5552233', 'Casa 99, Centro'),
-(19, 'Héctor', 'Núñez', 23, 'hector.nunez@email.com', '210987650', '5556677', 'Bosques de la Paz'),
-(20, 'Mónica', 'Castro', 39, 'monica.castro@email.com', '876543211', '5550000', 'Lote 15, Km 16'),
-(21, 'Jorge', 'Morales', 32, 'jorge.morales@email.com', '123123123', '5551111', 'Puerta del Sol'),
-(22, 'Paula', 'Peña', 26, 'paula.pena@email.com', '456456456', '5552222', 'Condado Naranjo'),
-(23, 'Roberto', 'Gil', 52, 'roberto.gil@email.com', '789789789', '5553333', 'Villa Nueva, Sector C'),
-(24, 'Diana', 'León', 34, 'diana.leon@email.com', '012012012', '5554444', 'Calle Principal'),
-(25, 'Esteban', 'Pinto', 41, 'esteban.pinto@email.com', '321321321', '5555555', 'Zona 1, Centro');
 
-INSERT INTO mascotas (id_animal, nombre, raza, especie, vacunas, esterilizado, edad, estado_disponibilidad) VALUES
-(1, 'Luna', 'Labrador', 'Perro', 'Parvovirus, Moquillo', 1, 3, 'disponible'),
-(2, 'Milo', 'Siamés', 'Gato', 'Triple Felina', 1, 2, 'adoptado'),
-(3, 'Coco', 'Pastor Alemán', 'Perro', 'Rabia, Parvovirus', 1, 5, 'disponible'),
-(4, 'Michi', 'Común Europeo', 'Gato', 'Triple Felina', 0, 1, 'en proceso'),
-(5, 'Rocky', 'Bulldog', 'Perro', 'Moquillo', 1, 6, 'disponible'),
-(6, 'Nala', 'Persa', 'Gato', 'Triple Felina', 1, 4, 'adoptado'),
-(7, 'Thor', 'Pitbull', 'Perro', 'Rabia', 1, 2, 'disponible'),
-(8, 'Kiara', 'Mestiza', 'Perro', 'Completa', 1, 8, 'disponible'),
-(9, 'Zeus', 'Dálmata', 'Perro', 'Moquillo', 1, 1, 'disponible'),
-(10, 'Pipo', 'Golden Retriever', 'Perro', 'Completa', 1, 4, 'adoptado'),
-(11, 'Gala', 'Pug', 'Perro', 'Parvovirus', 1, 7, 'disponible'),
-(12, 'Simba', 'Maine Coon', 'Gato', 'Triple Felina', 1, 3, 'disponible'),
-(13, 'Roco', 'Boxer', 'Perro', 'Rabia', 0, 2, 'en proceso'),
-(14, 'Bella', 'Chihuahua', 'Perro', 'Completa', 1, 5, 'disponible'),
-(15, 'Kira', 'Bengalí', 'Gato', 'Triple Felina', 1, 1, 'disponible'),
-(16, 'Max', 'Husky', 'Perro', 'Completa', 1, 3, 'disponible'),
-(17, 'Sasha', 'Yorkshire', 'Perro', 'Parvovirus', 1, 6, 'adoptado'),
-(18, 'Leo', 'Angora', 'Gato', 'Triple Felina', 1, 2, 'disponible'),
-(19, 'Toby', 'Schnauzer', 'Perro', 'Moquillo', 1, 4, 'disponible'),
-(20, 'Cleo', 'Sphynx', 'Gato', 'Triple Felina', 0, 5, 'disponible'),
-(21, 'Oliver', 'Bichón Frisé', 'Perro', 'Rabia', 1, 1, 'adoptado'),
-(22, 'Oso', 'Terranova', 'Perro', 'Completa', 1, 7, 'disponible'),
-(23, 'Mia', 'Scottish Fold', 'Gato', 'Triple Felina', 1, 3, 'disponible'),
-(24, 'Bolt', 'Galgo', 'Perro', 'Parvovirus', 1, 2, 'disponible'),
-(25, 'Fiona', 'Cocker Spaniel', 'Perro', 'Completa', 1, 4, 'en proceso'),
-(26, 'Ron', 'Doberman', 'Perro', 'Rabia', 1, 5, 'disponible'),
-(27, 'Sky', 'Mestizo', 'Perro', 'Moquillo', 1, 1, 'disponible'),
-(28, 'Pancha', 'Persa', 'Gato', 'Triple Felina', 1, 6, 'adoptado'),
-(29, 'Balú', 'San Bernardo', 'Perro', 'Completa', 1, 3, 'disponible'),
-(30, 'Nina', 'Mestiza', 'Perro', 'Parvovirus', 1, 2, 'disponible');
+-- DATOS Ingresados
+INSERT INTO adoptante (nombre, apellido, edad, correo, dpi, telefono, direccion) VALUES
+('Juan', 'Pérez', 35, 'juan.perez@email.com', '123456789', '5551234', 'Calle Falsa 123'),
+('María', 'López', 28, 'maria.lopez@email.com', '987654321', '5555678', 'Avenida Siempreviva 742'),
+('Carlos', 'Gómez', 45, 'carlos.gomez@email.com', '112233445', '5559012', 'Bulevar Central 50'),
+('Ana', 'Rodríguez', 22, 'ana.rodriguez@email.com', '667788990', '5553456', 'Residencial Los Robles'),
+('Pedro', 'Sánchez', 50, 'pedro.sanchez@email.com', '543210987', '5557890', 'Zona 10, Edificio A'),
+('Laura', 'Martínez', 31, 'laura.martinez@email.com', '109876543', '5552345', 'Colonia Primavera'),
+('Javier', 'Hernández', 38, 'javier.hernandez@email.com', '345678901', '5556789', 'Calle del Sol 21'),
+('Sofía', 'Díaz', 25, 'sofia.diaz@email.com', '765432109', '5550123', 'Apartamento 3C'),
+('Diego', 'Ruiz', 42, 'diego.ruiz@email.com', '210987654', '5554567', 'Casa Blanca 8'),
+('Elena', 'Torres', 33, 'elena.torres@email.com', '876543210', '5558901', 'Sector El Carmen'),
+('Andrés', 'Flores', 29, 'andres.flores@email.com', '334455667', '5553344', 'La Arboleda'),
+('Lucía', 'García', 24, 'lucia.garcia@email.com', '778899001', '5557788', 'Villa Hermosa'),
+('Ricardo', 'Vargas', 55, 'ricardo.vargas@email.com', '112233440', '5551122', 'Avenida Las Américas'),
+('Valeria', 'Reyes', 27, 'valeria.reyes@email.com', '667788991', '5556677', 'Zona 15, Bloque B'),
+('Manuel', 'Acosta', 40, 'manuel.acosta@email.com', '543210980', '5550011', 'El Campanario'),
+('Gabriela', 'Mendoza', 30, 'gabriela.mendoza@email.com', '109876540', '5554455', 'Calle del Lago'),
+('Fernando', 'Cano', 48, 'fernando.cano@email.com', '345678900', '5558899', 'Residencial San Lucas'),
+('Silvia', 'Ortiz', 36, 'silvia.ortiz@email.com', '765432100', '5552233', 'Casa 99, Centro'),
+('Héctor', 'Núñez', 23, 'hector.nunez@email.com', '210987650', '5556677', 'Bosques de la Paz'),
+('Mónica', 'Castro', 39, 'monica.castro@email.com', '876543211', '5550000', 'Lote 15, Km 16'),
+('Jorge', 'Morales', 32, 'jorge.morales@email.com', '123123123', '5551111', 'Puerta del Sol'),
+('Paula', 'Peña', 26, 'paula.pena@email.com', '456456456', '5552222', 'Condado Naranjo'),
+('Roberto', 'Gil', 52, 'roberto.gil@email.com', '789789789', '5553333', 'Villa Nueva, Sector C'),
+('Diana', 'León', 34, 'diana.leon@email.com', '012012012', '5554444', 'Calle Principal'),
+('Esteban', 'Pinto', 41, 'esteban.pinto@email.com', '321321321', '5555555', 'Zona 1, Centro');
+
+INSERT INTO mascotas (nombre, raza, especie, vacunas, esterilizado, edad, estado_disponibilidad) VALUES
+('Luna', 'Labrador', 'Perro', 'Parvovirus, Moquillo', 1, 3, 'disponible'),
+('Milo', 'Siamés', 'Gato', 'Triple Felina', 1, 2, 'adoptado'),
+('Coco', 'Pastor Alemán', 'Perro', 'Rabia, Parvovirus', 1, 5, 'disponible'),
+('Michi', 'Común Europeo', 'Gato', 'Triple Felina', 0, 1, 'en proceso'),
+('Rocky', 'Bulldog', 'Perro', 'Moquillo', 1, 6, 'disponible'),
+('Nala', 'Persa', 'Gato', 'Triple Felina', 1, 4, 'adoptado'),
+('Thor', 'Pitbull', 'Perro', 'Rabia', 1, 2, 'disponible'),
+('Kiara', 'Mestiza', 'Perro', 'Completa', 1, 8, 'disponible'),
+('Zeus', 'Dálmata', 'Perro', 'Moquillo', 1, 1, 'disponible'),
+('Pipo', 'Golden Retriever', 'Perro', 'Completa', 1, 4, 'adoptado'),
+('Gala', 'Pug', 'Perro', 'Parvovirus', 1, 7, 'disponible'),
+('Simba', 'Maine Coon', 'Gato', 'Triple Felina', 1, 3, 'disponible'),
+('Roco', 'Boxer', 'Perro', 'Rabia', 0, 2, 'en proceso'),
+('Bella', 'Chihuahua', 'Perro', 'Completa', 1, 5, 'disponible'),
+('Kira', 'Bengalí', 'Gato', 'Triple Felina', 1, 1, 'disponible'),
+('Max', 'Husky', 'Perro', 'Completa', 1, 3, 'disponible'),
+('Sasha', 'Yorkshire', 'Perro', 'Parvovirus', 1, 6, 'adoptado'),
+('Leo', 'Angora', 'Gato', 'Triple Felina', 1, 2, 'disponible'),
+('Toby', 'Schnauzer', 'Perro', 'Moquillo', 1, 4, 'disponible'),
+('Cleo', 'Sphynx', 'Gato', 'Triple Felina', 0, 5, 'disponible'),
+('Oliver', 'Bichón Frisé', 'Perro', 'Rabia', 1, 1, 'adoptado'),
+('Oso', 'Terranova', 'Perro', 'Completa', 1, 7, 'disponible'),
+('Mia', 'Scottish Fold', 'Gato', 'Triple Felina', 1, 3, 'disponible'),
+('Bolt', 'Galgo', 'Perro', 'Parvovirus', 1, 2, 'disponible'),
+('Fiona', 'Cocker Spaniel', 'Perro', 'Completa', 1, 4, 'en proceso'),
+('Ron', 'Doberman', 'Perro', 'Rabia', 1, 5, 'disponible'),
+('Sky', 'Mestizo', 'Perro', 'Moquillo', 1, 1, 'disponible'),
+('Pancha', 'Persa', 'Gato', 'Triple Felina', 1, 6, 'adoptado'),
+('Balú', 'San Bernardo', 'Perro', 'Completa', 1, 3, 'disponible'),
+('Nina', 'Mestiza', 'Perro', 'Parvovirus', 1, 2, 'disponible');
 
 INSERT INTO solicitudes (id_solicitud, id_adoptante, id_animal, estado_solicitud, fecha_solicitud, comentario) VALUES
 (1, 1, 1, 'aprobada', '2025-01-10', 'Primer solicitante. Excelente perfil.'),
@@ -222,33 +224,33 @@ INSERT INTO historial_medico (id_historial, id_animal, vacunas_aplicadas, tratam
 (29, 29, 'Rabia (2025-03-20)', 'Ninguno', '2025-03-20'),
 (30, 30, 'Parvovirus (2025-03-22)', 'Tratamiento hormonal', '2025-03-22');
 
-INSERT INTO usuarios (id_usuario, usuario, contraseña, rol, id_adoptante) VALUES
-(1, 'admin_sys', 'admin123', 'administrador', NULL),
-(2, 'supervisor_vet', 'vetpass', 'administrador', NULL),
-(3, 'jperez', 'juan123', 'adoptante', 1),
-(4, 'mlopez', 'maria456', 'adoptante', 2),
-(5, 'cgomez', 'carlos789', 'adoptante', 3),
-(6, 'arodriguez', 'ana111', 'adoptante', 4),
-(7, 'psanchez', 'pedro222', 'adoptante', 5),
-(8, 'lmartinez', 'laura333', 'adoptante', 6),
-(9, 'jhernandez', 'javier444', 'adoptante', 7),
-(10, 'sdiaz', 'sofia555', 'adoptante', 8),
-(11, 'druiz', 'diego666', 'adoptante', 9),
-(12, 'etorres', 'elena777', 'adoptante', 10),
-(13, 'aflores', 'andres888', 'adoptante', 11),
-(14, 'lgarcia', 'lucia999', 'adoptante', 12),
-(15, 'rvargas', 'ricardo101', 'adoptante', 13),
-(16, 'vreyes', 'valeria202', 'adoptante', 14),
-(17, 'macosta', 'manuel303', 'adoptante', 15),
-(18, 'gmendoza', 'gabriela404', 'adoptante', 16),
-(19, 'fcano', 'fernando505', 'adoptante', 17),
-(20, 'sortiz', 'silvia606', 'adoptante', 18),
-(21, 'hnunez', 'hector707', 'adoptante', 19),
-(22, 'mcastro', 'monica808', 'adoptante', 20),
-(23, 'jmorales', 'jorge909', 'adoptante', 21),
-(24, 'ppena', 'paula112', 'adoptante', 22),
-(25, 'rgil', 'roberto223', 'adoptante', 23),
-(26, 'dleon', 'diana334', 'adoptante', 24),
-(27, 'epinto', 'esteban445', 'adoptante', 25),
-(28, 'adop_temp', 'temp123', 'adoptante', NULL);
-
+INSERT INTO usuarios (usuario, contraseña, rol, id_adoptante) VALUES
+('admin_sys', 'admin123', 'administrador', NULL),
+('supervisor_vet', 'vetpass', 'administrador', NULL),
+('edit', 'edit', 'editor', NULL),
+('jperez', 'juan123', 'adoptante', 1),
+('mlopez', 'maria456', 'adoptante', 2),
+('cgomez', 'carlos789', 'adoptante', 3),
+('arodriguez', 'ana111', 'adoptante', 4),
+('psanchez', 'pedro222', 'adoptante', 5),
+('lmartinez', 'laura333', 'adoptante', 6),
+('jhernandez', 'javier444', 'adoptante', 7),
+('sdiaz', 'sofia555', 'adoptante', 8),
+('druiz', 'diego666', 'adoptante', 9),
+('etorres', 'elena777', 'adoptante', 10),
+('aflores', 'andres888', 'adoptante', 11),
+('lgarcia', 'lucia999', 'adoptante', 12),
+('rvargas', 'ricardo101', 'adoptante', 13),
+('vreyes', 'valeria202', 'adoptante', 14),
+('macosta', 'manuel303', 'adoptante', 15),
+('gmendoza', 'gabriela404', 'adoptante', 16),
+('fcano', 'fernando505', 'adoptante', 17),
+('sortiz', 'silvia606', 'adoptante', 18),
+('hnunez', 'hector707', 'adoptante', 19),
+('mcastro', 'monica808', 'adoptante', 20),
+('jmorales', 'jorge909', 'adoptante', 21),
+('ppena', 'paula112', 'adoptante', 22),
+('rgil', 'roberto223', 'adoptante', 23),
+('dleon', 'diana334', 'adoptante', 24),
+('epinto', 'esteban445', 'adoptante', 25),
+('adop_temp', 'temp123', 'adoptante', NULL);

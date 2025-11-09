@@ -6,11 +6,17 @@ use CodeIgniter\Model;
 
 class MascotasModel extends Model
 {
-    protected $table         = 'mascotas';
-    protected $primaryKey ='id_animal';
+    protected $table = 'mascotas';
+    protected $primaryKey = 'id_animal';
+    protected $useAutoIncrement = true;
+
     protected $allowedFields = [
-        'id_animal', 'nombre', 'raza', 'especie', 'vacunas', 'esterilizado', 'edad', 'estado_disponibilidad',
+        'nombre',
+        'raza',
+        'especie',
+        'vacunas',
+        'esterilizado',
+        'edad',
+        'estado_disponibilidad'
     ];
-    //protected $returnType    = \App\Entities\User::class;
-    //protected $useTimestamps = true;
 }

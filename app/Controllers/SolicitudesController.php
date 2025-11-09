@@ -11,11 +11,15 @@ class SolicitudesController extends BaseController
         $datos['datos']= $solicitud->findAll();
         return view('solicitudes', $datos);
     }
+     public function solicitud(): string
+    {                
+        return view('solicitud_cliente');
+    }
+
     public function agregarSolicitud()
     {        
         $solicitud = new SolicitudesModel();
         $datos=[
-            'id_solicitud'=> $this-> request->getPost('txt_id_solicitud'),
             'id_adoptante'=> $this-> request->getPost('txt_id_adoptante'),
             'id_animal'=> $this-> request->getPost('txt__id_animal'),
             'estado_solicitud'=> $this-> request->getPost('txt_estado'),
@@ -25,7 +29,8 @@ class SolicitudesController extends BaseController
         ];
         print_r($datos);
         $solicitud->insert($datos);
-        return $this->index();
+        //return $this->index();
+        return view('menu_cliente');
     }
 
    public function buscarSolicitud($codigo){
@@ -33,6 +38,7 @@ class SolicitudesController extends BaseController
         $solicitud = new SolicitudesModel();  
         $datos['datos']= $solicitud->where('id_solicitud',$codigo)->first();
         return view('form_editar_solicitud',$datos);
+   }
     public function modificarSolicitud(){
         $solicitud=new SolicitudesModel();
         $datos=[
@@ -40,7 +46,7 @@ class SolicitudesController extends BaseController
             'fecha_solicitud'=> $this-> request->getPost('txt_fecha'),
             'comentario'=> $this-> request->getPost('txt_comentario'),
         ];
-        $codigo = $this->request->getpost('txt_numero');
+        $codigo = $this->request->getPost('txt_id_solicitud');
         $solicitud->update($codigo, $datos);
         return $this->index();
     }

@@ -16,38 +16,26 @@ class AdoptantesController extends BaseController
         return view('adoptante', $datos);
     }
 
-    public function agregarAdoptante()
-    {
-        $adoptante = new AdoptantesModel();
-        $usuario = new UsuariosModel();
+     public function agregarAdoptante()
+{
+    $adoptante = new AdoptantesModel();
 
-        $id = $this->request->getPost('txt_codigo');
+    $datos = [
+        'nombre'   => $this->request->getPost('txt_nombre'),
+        'apellido' => $this->request->getPost('txt_apellido'),
+        'edad'     => $this->request->getPost('txt_edad'),
+        'dpi'      => $this->request->getPost('txt_dpi'),
+        'telefono' => $this->request->getPost('txt_telefono'),
+        'correo'   => $this->request->getPost('txt_email'),
+        'direccion'=> $this->request->getPost('txt_direccion')
+    ];
 
-        if ($adoptante->find($id)) {
-            session()->setFlashdata('error', 'Error: ya existe un adoptante con el ID proporcionado.');
-            return redirect()->to(base_url('adoptante'));
-        }
+    $adoptante->insert($datos);
 
-        $datos = [
-            'id_adoptante'=> $id,
-            'nombre'=> $this->request->getPost('txt_nombre'),
-            'apellido'=> $this->request->getPost('txt_apellido'),
-            'edad'=> $this->request->getPost('txt_edad'),
-            'dpi'=> $this->request->getPost('txt_dpi'),
-            'telefono'=> $this->request->getPost('txt_telefono'),
-            'correo'=> $this->request->getPost('txt_email'),
-            'direccion'=> $this->request->getPost('txt_direccion')
-        ];
+    session()->setFlashdata('success', 'Adoptante agregado correctamente.');
+    return redirect()->to(base_url('adoptante'));
+}
 
-        try {
-            $adoptante->insert($datos);
-            session()->setFlashdata('success', 'Adoptante agregado correctamente.');
-        } catch (\Exception $e) {
-            session()->setFlashdata('error', 'Ocurrió un error al agregar el adoptante: ' . $e->getMessage());
-        }
-
-        return redirect()->to(base_url('adoptante'));
-    }
 
     public function buscarAdoptante($codigo)
     {
@@ -108,6 +96,13 @@ class AdoptantesController extends BaseController
             'correo'=> $this->request->getPost('txt_email'),
             'direccion'=> $this->request->getPost('txt_direccion')
         ];
+        $codigo = $this->request->getPost('txt_codigo');
+        $adoptante->update($codigo, $datos);
+
+        
+        session()->setFlashdata('success', 'Adoptante modificado correctamente.');
+return redirect()->to(base_url('adoptante'));
+    }
 
         try {
             $adoptante->update($codigo, $datos);
