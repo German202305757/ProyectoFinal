@@ -15,7 +15,6 @@ class SolicitudesController extends BaseController
     {        
         $solicitud = new SolicitudesModel();
         $datos=[
-            'id_solicitud'=> $this-> request->getPost('txt_id_solicitud'),
             'id_adoptante'=> $this-> request->getPost('txt_id_adoptante'),
             'id_animal'=> $this-> request->getPost('txt__id_animal'),
             'estado_solicitud'=> $this-> request->getPost('txt_estado'),

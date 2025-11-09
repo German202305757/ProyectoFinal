@@ -5,13 +5,17 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 class UsuariosModel extends Model
-
 {
-    protected $table         = 'usuarios';
+    protected $table = 'usuarios';
     protected $primaryKey = 'id_usuario';
+    protected $useAutoIncrement = true;
+
+
     protected $allowedFields = [
-        'id_usuario','usuario', 'contraseña', 'rol', 'id_adoptante'
+        'usuario',
+        'contraseña',
+        'rol',
+        'id_adoptante',
+        'tipo_usuario'
     ];
-    // protected $returnType    = \App\Entities\User::class;
-    // protected $useTimestamps = true;
 }
