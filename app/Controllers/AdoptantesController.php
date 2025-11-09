@@ -112,5 +112,4 @@ return redirect()->to(base_url('adoptante'));
         }
 
         return redirect()->to(base_url('adoptante'));
-    }
 }

@@ -8,23 +8,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
   <style>
-    /* Estilo opcional para que las imágenes de las tarjetas mantengan proporciones */
     .card-img-top {
       width: 100%;
       height: 250px;
       /* Altura fija para las imágenes */
       object-fit: cover;
-      /* Asegura que la imagen cubra el espacio sin deformarse */
     }
   </style>
 </head>
 
 <body class="d-flex flex-column vh-100">
     <?php
-  //si no existe la variable de sesion activa(la cual se crea al logearse correctamente)
   if (!session()->get('activa') || session()->get('tipo') != 2) {
     echo "no tiene acceso";
-    //return redirect()->to(base_url('/'));
 
   } else {
 
@@ -78,16 +74,16 @@
 
   <footer class="text-muted py-5 bg-dark text-white mt-auto">
         <div class="container text-center">
-        <p class="mb-1">&copy; 2025 Organización AdoptaAmor. Todos los derechos reservados.</p>
+        <p class="mb-1">&copy; 2025 Organización Refugio Animales. Todos los derechos reservados.</p>
         <p class="mb-0">
           <a href="#" class="text-white">Volver arriba</a> |
           <a href="#" class="text-white">Política de Privacidad</a> |
-          <a href="#" class="text-white">Contacto</a>
+          <a href="#" class="text-white">Créditos</a>
         </p>
       </div>
     </footer>
   <?php
-  } //fin del else que verifica si la sesion esta activa
+  } 
   ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>

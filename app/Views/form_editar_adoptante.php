@@ -63,7 +63,9 @@
                 </form>
             </div>
         </div>
-
+        <footer class="text-center mt-4 mb-3 text-secondary">
+            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Adoptantes
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

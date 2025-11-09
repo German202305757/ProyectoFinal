@@ -51,9 +51,6 @@ class MascotasController extends BaseController
         return view('form_editar_mascotas',$datos);
     }
      public function buscarMascotasSolicitud($codigo){
-        /* echo "codigo seleccionado para busqueda: ". $codigo;
-        echo session()->get('adoptante');
-        */
         $animal = new MascotasModel();    
         $datos['datos']= $animal->where('id_animal',$codigo)->first();       
         return view('solicitud_cliente',$datos);

@@ -53,7 +53,6 @@ class UsuariosController extends BaseController
             'tipo_usuario' => $this->request->getPost('txt_tipo_usuario'),
         ];
 
-        // Si el usuario cambió su contraseña, actualizarla también
         $nuevaPass = $this->request->getPost('txt_contraseña');
         if (!empty($nuevaPass)) {
             $datos['contraseña'] = password_hash($nuevaPass, PASSWORD_DEFAULT);
@@ -69,7 +68,6 @@ class UsuariosController extends BaseController
     {
         $usuarioModel = new UsuariosModel();
 
-        // Verificar si el usuario existe antes de eliminarlo
         $usuario = $usuarioModel->find($id);
         if (!$usuario) {
             session()->setFlashdata('error', 'El usuario no existe.');

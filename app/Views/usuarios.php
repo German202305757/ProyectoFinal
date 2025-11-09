@@ -12,55 +12,55 @@
 
 <body class="bg-light">
     <?php
-    //si no existe la variable de sesion activa(la cual se crea al logearse correctamente)
     if (!session()->get('activa') || session()->get('tipo') != 1) {
         echo "no tiene acceso";
-        //return redirect()->to(base_url('/'));
 
     } else {
     ?>
     <header class="mt-5">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../public/">🐾 AdoptaAmor</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../public/">🐾 AdoptaAmor</a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido"
+                    aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-          <div class="collapse navbar-collapse" id="navbarContenido">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<?= base_url('menu_admin') ?>">Página Principal</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('citas') ?>">Citas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('mascotas') ?>">Mascotas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('solicitudes') ?>">Solicitudes de Adopción</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('historialmedico') ?>">Historial Médico</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
-              </li>
-            </ul>
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="<?= base_url('menu_admin') ?>">Página
+                                Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('citas') ?>">Citas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('mascotas') ?>">Mascotas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('solicitudes') ?>">Solicitudes de Adopción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('historialmedico') ?>">Historial Médico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
+                        </li>
+                    </ul>
 
-            <form class="d-flex">
-              
-              <a href="<?= base_url('cerrar_sesion') ?>" class="btn btn-outline-light">Cerrar Sesión</a>
-            </form>
-          </div>
-          
-        </div>
-      </nav>
+                    <form class="d-flex">
+
+                        <a href="<?= base_url('cerrar_sesion') ?>" class="btn btn-outline-light">Cerrar Sesión</a>
+                    </form>
+                </div>
+
+            </div>
+        </nav>
     </header>
 
     <div class="container py-4 mt-5">
@@ -191,8 +191,8 @@
             </div>
         </div>
     </div>
-     <?php
-    } //fin del else que verifica si la sesion esta activa
+    <?php
+    } 
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>

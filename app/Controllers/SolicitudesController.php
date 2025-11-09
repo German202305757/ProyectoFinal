@@ -29,7 +29,6 @@ class SolicitudesController extends BaseController
         ];
         print_r($datos);
         $solicitud->insert($datos);
-        //return $this->index();
         return view('menu_cliente');
     }
 
@@ -58,5 +57,4 @@ class SolicitudesController extends BaseController
         $solicitud->delete($id); 
         return $this->index();
     }
-}
 }

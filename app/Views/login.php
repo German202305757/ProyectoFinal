@@ -7,14 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     
     <style>
-      /* Estilo opcional para que las imágenes de las tarjetas mantengan proporciones */
       .card-img-top {
         width: 100%;
         height: 250px; /* Altura fija para las imágenes */
         object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
       }
       
-      /* Estilo para centrar el formulario de login verticalmente */
       .login-section {
         min-height: calc(100vh - 142px); /* Ajusta esto según la altura de tu footer */
         display: flex;
@@ -56,7 +54,6 @@
                 <div class="card-body p-4 p-md-5">
                   <h2 class="text-center fw-light mb-4">Iniciar Sesión</h2>
                   
-                  <!-- Formulario de inicio de sesion -->
                   <form action="<?=base_url('iniciar_sesion')?>" method="POST"> 
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" name="txt_usuario" id="txt_usuario" placeholder="usuario" required>
@@ -106,11 +103,11 @@
     </main>
     <footer class="text-muted py-5 bg-dark text-white">
       <div class="container text-center">
-        <p class="mb-1">&copy; 2025 Organización AdoptaAmor. Todos los derechos reservados.</p>
+        <p class="mb-1">&copy; 2025 Organización Refugio Animales. Todos los derechos reservados.</p>
         <p class="mb-0">
           <a href="#" class="text-white">Volver arriba</a> | 
           <a href="#" class="text-white">Política de Privacidad</a> | 
-          <a href="#" class="text-white">Contacto</a>
+          <a href="#" class="text-white">Créditos</a>
         </p>
       </div>
     </footer>

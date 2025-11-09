@@ -7,29 +7,17 @@ use CodeIgniter\Router\RouteCollection;
  */
 //Homes
 $routes->get('/', 'Home::index');
+$routes->get('menu_admin','Home::verMenuAdmin');
+$routes->get('menu_editor','Home::verMenuEditor');
+$routes->get('menu_cliente','Home::verMenuClientes');
+
 $routes->get('citas','CitasController::index');
 $routes->get('mascotas','MascotasController::index');
 $routes->get('usuarios','UsuariosController::index');
 $routes->get('adoptantes','AdoptantesController::index');
-
+$routes->get('solicitudes','SolicitudesController::index');
 $routes->get('adoptante','AdoptantesController::index');
 $routes->get('historialmedico','HistorialMedicoController::index');
-$routes->get('solicitudes','SolicitudesController::index');
-$routes->post('agregar_solicitud','SolicitudesController::agregarSolicitud');
-$routes->get('buscar_solicitud/(:num)','SolicitudesController::buscarSolicitud/$1');
-
-$routes->get('mascotas','MascotasController::index');
-$routes->post('agregar_mascotas','MascotasController::agregarMascotas');
-
-//Eliminar
-$routes->get('eliminar_mascotas/(:num)','MascotasController::eliminarMascotas/$1');
-
-//Buscar
-$routes->get('buscar_mascotas/(:num)','MascotasController::buscarMascotas/$1');
-
-//Modificar
-$routes->post('modificar_mascotas','MascotasController::modificarMascotas');
-
 
 //Agregar
 $routes->post('agregar_mascotas','MascotasController::agregarMascotas');
@@ -38,6 +26,8 @@ $routes->post('agregarregistro','HistorialMedicoController::agregarregistro');
 $routes->post('agregar_solicitud','SolicitudesController::agregarSolitud');
 $routes->post('agregar_adoptante','AdoptantesController::agregarAdoptante');
 $routes->post('agregar_citas','CitasController::agregarCitas');
+$routes->post('agregar_solicitud','SolicitudesController::agregarSolicitud');
+$routes->post('agregar_solicitud_cliente','SolicitudesController::agregarSolicitud');
 
 //Eliminar
 $routes->get('eliminar_mascotas/(:num)','MascotasController::eliminarMascotas/$1');
@@ -52,13 +42,14 @@ $routes->get('buscar_mascotas/(:num)','MascotasController::buscarMascotas/$1');
 $routes->get('buscar_citas/(:num)','CitasController::buscarCitas/$1');
 $routes->get('buscar_usuario/(:num)','UsuariosController::buscarUsuario/$1');
 $routes->get('buscar_adoptante/(:num)','AdoptantesController::buscarAdoptante/$1');
+$routes->get('buscar_mascotas_solicitud/(:num)','MascotasController::buscarMascotasSolicitud/$1');
+$routes->get('buscar_solicitud/(:num)','SolicitudesController::buscarSolicitud/$1');
 
 //Modificar
 $routes->post('modificar_mascotas','MascotasController::modificarMascotas');
 $routes->post('modificar_citas','CitasController::modificarCitas');
 $routes->post('modificar_solicitud','SolicitudesController::modificarSolicitud');
 $routes->post('modificar_usuario', 'UsuariosController::modificarUsuario');
-//Modificar}
 $routes->post('modificar_adoptante', 'AdoptantesController::modificarAdoptante');
 
 
@@ -69,15 +60,9 @@ $routes->post('iniciar_sesion','LoginController::index');
 $routes->get('cerrar_sesion','LoginController::cerrarSesion');
 
 
-$routes->get('menu_admin','Home::verMenuAdmin');
-$routes->get('menu_editor','Home::verMenuEditor');
-$routes->get('menu_cliente','Home::verMenuClientes');
-
 $routes->get('mascotas_catalogo','MascotasController::catalogo');
 $routes->get('solicitud_cliente','SolicitudesController::solicitud');
-$routes->get('buscar_mascotas_solicitud/(:num)','MascotasController::buscarMascotasSolicitud/$1');
-$routes->post('agregar_solicitud_cliente','SolicitudesController::agregarSolicitud');
+
 //Registro
 $routes->get('registro', 'RegistroController::index');
 $routes->post('registro/guardar', 'RegistroController::guardar');
-$routes->post('modificar_adoptante', 'AdoptantesController::modificarAdoptante');

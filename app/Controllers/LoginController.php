@@ -14,13 +14,11 @@ class LoginController extends BaseController
 
         $usuario = new LoginModel();
         
-        //busqueda de datos y respuesta de usuario
         $datos = $usuario ->select('usuario,tipo_usuario,id_adoptante')  
         ->where('usuario',$nombre)
         -> where('contraseña', $pass)
         -> first();
         
-        // si $datos es true entonces -> crea sesión y redirige a páginas correspondientes segun id
         if ($datos){
             $sesion=[                
                 'usuario'=>$datos['usuario'],
@@ -28,7 +26,6 @@ class LoginController extends BaseController
                 'adoptante'=>$datos['id_adoptante'],
                 'activa'=>true
             ]; 
-            //crear variables de sesion acceder a ellos desde cualquier página
             session()->set($sesion);
 
             if($datos['tipo_usuario']==1){
@@ -43,15 +40,12 @@ class LoginController extends BaseController
 
             print_r($datos);
         } else {
-            //redirige con mensaje de error
             return redirect()->to(base_url('/?error=1'));
             
         }
     }
     public function cerrarSesion(){
-        //destruye las variables de sesión
         session()->destroy();
-        //lleva a la página de inicio con mensaje de sesion cerrada.
         return redirect()->to(base_url('/?error=2'));
     }
 }
