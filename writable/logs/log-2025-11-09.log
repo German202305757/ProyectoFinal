@@ -270,3 +270,20 @@ in SYSTEMPATH\Database\BaseBuilder.php on line 2819.
  7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-09 00:55:56 --> mysqli_sql_exception: Duplicate entry 'asdjasd@gmail.com' for key 'correo' in C:\xampp\htdocs\ProyectoFinal\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ProyectoFinal\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `adoptan...', 0)
+#1 C:\xampp\htdocs\ProyectoFinal\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `adoptan...')
+#2 C:\xampp\htdocs\ProyectoFinal\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `adoptan...')
+#3 C:\xampp\htdocs\ProyectoFinal\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `adoptan...', Array, false)
+#4 C:\xampp\htdocs\ProyectoFinal\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ProyectoFinal\system\BaseModel.php(1025): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ProyectoFinal\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ProyectoFinal\app\Controllers\AdoptantesController.php(113): CodeIgniter\Model->update('100', Array)
+#8 C:\xampp\htdocs\ProyectoFinal\system\CodeIgniter.php(933): App\Controllers\AdoptantesController->modificarAdoptante()
+#9 C:\xampp\htdocs\ProyectoFinal\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdoptantesController))
+#10 C:\xampp\htdocs\ProyectoFinal\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ProyectoFinal\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ProyectoFinal\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ProyectoFinal\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
