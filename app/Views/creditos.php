@@ -66,7 +66,7 @@
                     <div class="card h-100 border-0 shadow-sm rounded-4">
                         <div class="card-body">
                             <h5 class="developer-name">Pablo Sontay</h5>
-                            <p class="mb-1"><strong>Carnet:</strong> 4574</p>
+                            <p class="mb-1"><strong>Carnet:</strong>202308288</p>
                             <p class="mb-1"><strong>Rol:</strong> Desarrollador</p>
                             <p class="mb-2"><strong>Procesos trabajados:</strong></p>
                             <ul class="text-muted">
@@ -81,12 +81,12 @@
                     <div class="card h-100 border-0 shadow-sm rounded-4">
                         <div class="card-body">
                             <h5 class="developer-name">Álvaro Calderon</h5>
-                            <p class="mb-1"><strong>Carnet:</strong> 4584</p>
+                            <p class="mb-1"><strong>Carnet:</strong>201503229</p>
                             <p class="mb-1"><strong>Rol:</strong> Desarrollador</p>
                             <p class="mb-2"><strong>Procesos trabajados:</strong></p>
                             <ul class="text-muted">
                                 <li>Diseño de la Página Principal</li>
-                                <li>Menú de Navegación y Acceso</li>
+                                <li>Menú de Navegación y Acceso / Logins</li>
                             </ul>
                         </div>
                     </div>
