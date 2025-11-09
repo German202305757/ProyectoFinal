@@ -43,10 +43,10 @@
                 <button type="submit" class="btn btn-primary w-100">Registrarse</button>
             </form>
         </div>
-        <footer class="text-center mt-4 mb-3 text-secondary">
-            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Registro
-        </footer>
     </div>
 </body>
+<footer class="text-center mt-4 mb-3 text-secondary">
+    Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Registro
+</footer>
 
 </html>

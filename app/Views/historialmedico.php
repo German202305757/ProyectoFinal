@@ -156,9 +156,6 @@
                 </form>
             </div>
         </div>
-        <footer class="text-center mt-4 mb-3 text-secondary">
-            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Historial Medico
-        </footer>
     </div>
     <?php
     } 
@@ -168,5 +165,8 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
     </script>
 </body>
+        <footer class="text-center mt-4 mb-3 text-secondary">
+            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Historial Medico
+        </footer>
 
 </html>
