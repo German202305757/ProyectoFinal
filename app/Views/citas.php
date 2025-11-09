@@ -48,6 +48,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
+                            </li>
                         </ul>
 
                         <form class="d-flex">

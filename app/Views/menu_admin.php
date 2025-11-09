@@ -60,6 +60,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
+              </li>
             </ul>
 
             <form class="d-flex">
@@ -80,9 +83,9 @@
             <h1 class="fw-light">Bienvenido al menu de administrador:   <?= session()->get('usuario') ?></h1>
             <p class="lead text-muted">Puedes encontrar en el menú superior las opciones de acceso, recuerda que en nuestra página puedes encontrar cientos de perros, gatos y otros animales que necesitan un hogar amoroso.</p>
             <p>
-              <a href="#" class="btn btn-primary my-2">Mascotas</a>
-              <a href="#" class="btn btn-secondary my-2">Solicitudes de adopción</a>
-              <a href="#" class="btn btn-success my-2">Citas Pendientes</a>
+              <a href="<?= base_url('mascotas') ?>" class="btn btn-primary my-2">Mascotas</a>
+              <a href="<?= base_url('solicitudes') ?>" class="btn btn-secondary my-2">Solicitudes de adopción</a>
+              <a href="<?= base_url('citas') ?>" class="btn btn-success my-2">Citas Pendientes</a>
             </p>
           </div>
         </div>

@@ -11,9 +11,54 @@
 </head>
 
 <body class="bg-light">
-    <div class="container py-4">
-        <div class="text-center mb-4">
-            <h1 class="fw-bold text-primary">Gestión de Adoptantes</h1>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../public/">🐾 AdoptaAmor</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContenido">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Página Principal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('citas') ?>">Citas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('mascotas') ?>">Mascotas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('solicitudes') ?>">Solicitudes de Adopción</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('historialmedico') ?>">Historial Médico</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('usuarios') ?>">Usuarios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('adoptantes') ?>">Adoptantes</a>
+              </li>
+            </ul>
+
+            <form class="d-flex">
+              
+              <a href="<?= base_url('cerrar_sesion') ?>" class="btn btn-outline-light">Cerrar Sesión</a>
+            </form>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+
+    <div class="container py-4 mt-4">
+        <div class="text-center mb-4 mt-5">
+            <h1 class="fw-bold text-primary mt-5">Gestión de Adoptantes</h1>
             <p class="text-secondary">Administra los adoptante registrados en nuestro sistema</p>
         </div>
 
