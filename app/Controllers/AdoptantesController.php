@@ -16,26 +16,25 @@ class AdoptantesController extends BaseController
         return view('adoptante', $datos);
     }
 
-     public function agregarAdoptante()
-{
-    $adoptante = new AdoptantesModel();
+    public function agregarAdoptante()
+    {
+        $adoptante = new AdoptantesModel();
 
-    $datos = [
-        'nombre'   => $this->request->getPost('txt_nombre'),
-        'apellido' => $this->request->getPost('txt_apellido'),
-        'edad'     => $this->request->getPost('txt_edad'),
-        'dpi'      => $this->request->getPost('txt_dpi'),
-        'telefono' => $this->request->getPost('txt_telefono'),
-        'correo'   => $this->request->getPost('txt_email'),
-        'direccion'=> $this->request->getPost('txt_direccion')
-    ];
+        $datos = [
+            'nombre'   => $this->request->getPost('txt_nombre'),
+            'apellido' => $this->request->getPost('txt_apellido'),
+            'edad'     => $this->request->getPost('txt_edad'),
+            'dpi'      => $this->request->getPost('txt_dpi'),
+            'telefono' => $this->request->getPost('txt_telefono'),
+            'correo'   => $this->request->getPost('txt_email'),
+            'direccion'=> $this->request->getPost('txt_direccion')
+        ];
 
-    $adoptante->insert($datos);
+        $adoptante->insert($datos);
 
-    session()->setFlashdata('success', 'Adoptante agregado correctamente.');
-    return redirect()->to(base_url('adoptante'));
-}
-
+        session()->setFlashdata('success', 'Adoptante agregado correctamente.');
+        return redirect()->to(base_url('adoptante'));
+    }
 
     public function buscarAdoptante($codigo)
     {
@@ -96,13 +95,6 @@ class AdoptantesController extends BaseController
             'correo'=> $this->request->getPost('txt_email'),
             'direccion'=> $this->request->getPost('txt_direccion')
         ];
-        $codigo = $this->request->getPost('txt_codigo');
-        $adoptante->update($codigo, $datos);
-
-        
-        session()->setFlashdata('success', 'Adoptante modificado correctamente.');
-return redirect()->to(base_url('adoptante'));
-    }
 
         try {
             $adoptante->update($codigo, $datos);
@@ -112,4 +104,5 @@ return redirect()->to(base_url('adoptante'));
         }
 
         return redirect()->to(base_url('adoptante'));
+    }
 }
