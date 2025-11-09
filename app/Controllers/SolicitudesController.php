@@ -59,3 +59,4 @@ class SolicitudesController extends BaseController
         return $this->index();
     }
 }
+}

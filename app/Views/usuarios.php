@@ -70,6 +70,20 @@
         </div>
 
         <div id="carouselExample" class="carousel slide mb-5">
+            <?php if (isset($error) && $error): ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i> <?= $error ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+
+            <?php if (isset($success) && $success): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle-fill"></i> <?= $success ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif; ?>
+
             <div class="carousel-inner rounded shadow-sm">
                 <div class="carousel-item active">
                     <img src="https://www.4webs.es/blog/wp-content/uploads/2016/10/usuarios-nuevos-vs-recurrentes.jpg"
@@ -173,7 +187,7 @@
                         </button>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </div>
@@ -184,7 +198,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <footer class="text-center mt-4 mb-3 text-secondary">
-            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Usuarios
-        </footer>
+    Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Usuarios
+</footer>
 
 </html>

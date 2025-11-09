@@ -14,6 +14,22 @@
         <div class="row">
             <div class="col-4 offset-4">
                 <h1>Editar Adoptante</h1>
+                <?php if(session()->getFlashdata('success')): ?>
+                <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <?= session()->getFlashdata('success'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>
+                <?php endif; ?>
+
+                <?php if(session()->getFlashdata('error')): ?>
+                <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                    <?= session()->getFlashdata('error'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>
+                <?php endif; ?>
+
                 <form action="<?=base_url('modificar_adoptante')?>" method="post">
                     <label for="" class="form-label">Adoptante ID</label>
                     <input type="number" class="form-control" name="txt_codigo" id="txt_codigo" class="form-control"
@@ -25,20 +41,24 @@
                     <input type="text" class="form-control" name="txt_apellido" id="txt_apellido" class="form-control"
                         value="<?=$datos['apellido'];?>">
                     <label for="txt_edad" class="form-label">Edad</label>
-                    <input type="number" class="form-control" name="txt_edad" id="txt_edad"
-                        class="form-control" value="<?=$datos['edad'];?>">
+                    <input type="number" class="form-control" name="txt_edad" id="txt_edad" class="form-control"
+                        value="<?=$datos['edad'];?>">
                     <label for="txt_email" class="form-label">Correo</label>
-                    <input type="email" class="form-control" name="txt_email" id="txt_email"
-                        class="form-control" value="<?=$datos['correo'];?>">
+                    <input type="email" class="form-control" name="txt_email" id="txt_email" class="form-control"
+                        value="<?=$datos['correo'];?>">
                     <label for="txt_dpi" class="form-label">DPI</label>
                     <input type="number" class="form-control" name="txt_dpi" id="txt_dpi" class="form-control"
                         value="<?=$datos['dpi'];?>">
                     <label for="txt_telefono" class="form-label">Telefono</label>
-                    <input type="number" class="form-control" name="txt_telefono" id="txt_telefono"
-                        class="form-control" value="<?=$datos['telefono'];?>">
+                    <input type="number" class="form-control" name="txt_telefono" id="txt_telefono" class="form-control"
+                        value="<?=$datos['telefono'];?>">
                     <label for="txt_direccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" name="txt_direccion" id="txt_direccion"
-                        class="form-control" value="<?=$datos['correo'];?>">
+                    <input type="text" class="form-control" name="txt_direccion" id="txt_direccion" class="form-control"
+                        value="<?=$datos['correo'];?>">
+                    <label for="txt_nuevo_codigo" class="form-label">Nuevo ID (opcional)</label>
+                    <input type="number" class="form-control" name="txt_nuevo_codigo" id="txt_nuevo_codigo">
+                    <small class="text-muted">Solo llene este campo si desea cambiar el ID.</small>
+
                     <button type="submit" class="form-control btn btn-info mt-2">Guardar Cambios</button>
                 </form>
             </div>

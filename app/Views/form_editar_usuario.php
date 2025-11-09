@@ -22,14 +22,16 @@
                     <input type="text" name="txt_usuario" id="txt_usuario" class="form-control"
                         value="<?=$datos['usuario'];?>">
                     <label for="txt_contrasena" class="form-label">Contraseña</label>
-                    <input type="text" class="form-control" name="txt_contrasena" id="txt_contraseña" class="form-control"
-                        value="<?=$datos['contraseña'];?>">
+                    <input type="text" class="form-control" name="txt_contrasena" id="txt_contraseña"
+                        class="form-control" value="<?=$datos['contraseña'];?>">
                     <label for="txt_rol" class="form-label">Rol</label>
-                    <input type="text" class="form-control" name="txt_rol" id="txt_rol"
-                        class="form-control" value="<?=$datos['rol'];?>">
+                    <input type="text" class="form-control" name="txt_rol" id="txt_rol" class="form-control"
+                        value="<?=$datos['rol'];?>">
                     <label for="txt_id_adoptante" class="form-label">Adoptante ID</label>
                     <input type="number" class="form-control" name="txt_id_adoptante" id="txt_id_adoptante"
                         class="form-control" value="<?=$datos['id_adoptante'];?>">
+                    <input type="hidden" name="txt_codigo_original" value="<?= $datos['id_usuario']; ?>">
+
                     <button type="submit" class="form-control btn btn-info mt-2">Guardar Cambios</button>
                 </form>
             </div>
