@@ -12,7 +12,7 @@ class UsuariosController extends BaseController
         $usuario = new UsuariosModel();
         $datos['datos'] = $usuario->findAll();
         $datos['success'] = session()->getFlashdata('success');
-        $datos['error']   = session()->getFlashdata('error');
+        $datos['error'] = session()->getFlashdata('error');
 
         return view('usuarios', $datos);
     }
@@ -90,11 +90,11 @@ class UsuariosController extends BaseController
     }
 
     $datos = [
-        'id_usuario'   => $nuevoCodigo,
-        'usuario'      => $this->request->getPost('txt_usuario'),
-        'contraseña'   => $this->request->getPost('txt_contrasena'),
-        'rol'          => $this->request->getPost('txt_rol'),
-        'id_adoptante' => $idAdoptante
+        'id_usuario'=> $nuevoCodigo,
+        'usuario'=> $this->request->getPost('txt_usuario'),
+        'contraseña'=> $this->request->getPost('txt_contrasena'),
+        'rol'=> $this->request->getPost('txt_rol'),
+        'id_adoptante'=> $idAdoptante
     ];
 
     if ($nuevoCodigo != $codigoAnterior) {

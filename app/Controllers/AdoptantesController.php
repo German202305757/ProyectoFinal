@@ -100,13 +100,13 @@ class AdoptantesController extends BaseController
 
         $datos = [
             'id_adoptante' => $nuevoCodigo,
-            'nombre'       => $this->request->getPost('txt_nombre'),
-            'apellido'     => $this->request->getPost('txt_apellido'),
-            'edad'         => $this->request->getPost('txt_edad'),
-            'dpi'          => $this->request->getPost('txt_dpi'),
-            'telefono'     => $this->request->getPost('txt_telefono'),
-            'correo'       => $this->request->getPost('txt_email'),
-            'direccion'    => $this->request->getPost('txt_direccion')
+            'nombre'=> $this->request->getPost('txt_nombre'),
+            'apellido'=> $this->request->getPost('txt_apellido'),
+            'edad'=> $this->request->getPost('txt_edad'),
+            'dpi'=> $this->request->getPost('txt_dpi'),
+            'telefono'=> $this->request->getPost('txt_telefono'),
+            'correo'=> $this->request->getPost('txt_email'),
+            'direccion'=> $this->request->getPost('txt_direccion')
         ];
 
         try {
