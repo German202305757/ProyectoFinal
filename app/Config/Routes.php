@@ -100,3 +100,6 @@ $routes->get('mascotas_catalogo','MascotasController::catalogo');
 $routes->get('solicitud_cliente','SolicitudesController::solicitud');
 $routes->get('buscar_mascotas_solicitud/(:num)','MascotasController::buscarMascotasSolicitud/$1');
 $routes->post('agregar_solicitud_cliente','SolicitudesController::agregarSolicitud');
+//Registro
+$routes->get('registro', 'RegistroController::index');
+$routes->post('registro/guardar', 'RegistroController::guardar');

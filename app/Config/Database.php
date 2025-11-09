@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => 'toor',
+        'password'     => '',
         'database'     => 'refugio_animales',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',

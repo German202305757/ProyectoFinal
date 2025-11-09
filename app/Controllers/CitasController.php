@@ -15,7 +15,6 @@ class CitasController extends BaseController
     {
         $citas = new CitasModel();       
         $datos=[
-            'id_cita'=> $this-> request->getPost('txt_cita'),
             'id_solicitud'=> $this-> request->getPost('txt_solicitud'),
             'fecha_cita'=> $this-> request->getPost('txt_fecha'),
             'hora_cita'=> $this-> request->getPost('txt_hora'),

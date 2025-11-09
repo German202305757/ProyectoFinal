@@ -37,13 +37,6 @@ class MascotasController extends BaseController
         return $this->index();
     }
 
-       public function eliminarMascotas($id){
-        echo "Codigo Seleccionado: ". $id;        
-        $animal = new MascotasModel();        
-        $animal->delete($id); 
-        return $this->index();
-    }
-
       public function eliminarMascota($id){
         echo "Codigo Seleccionado: ". $id;        
         $animal = new MascotasModel();        

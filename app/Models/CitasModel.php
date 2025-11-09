@@ -6,11 +6,16 @@ use CodeIgniter\Model;
 
 class CitasModel extends Model
 {
-    protected $table         = 'citas';
-    protected $primaryKey ='id_cita';
+    protected $table = 'citas';
+    protected $primaryKey = 'id_cita';
+    protected $useAutoIncrement = true;
+
+
     protected $allowedFields = [
-        'id_cita', 'id_solicitud', 'fecha_cita', 'hora_cita', 'tipo_cita', 'comentario',
+        'id_solicitud',
+        'fecha_cita',
+        'hora_cita',
+        'tipo_cita',
+        'comentario'
     ];
-    //protected $returnType    = \App\Entities\User::class;
-    //protected $useTimestamps = true;
 }

@@ -13,16 +13,16 @@ class HistorialMedicoController extends BaseController
 
 public function agregarregistro(){
     $historial = New HistorialMedicoModel();
-    $datos=[
-        'id_historial'=>$this->request->getPost('txt_id_historial'),
-        'id_animal'=>$this->request->getPost('txt_id_historial'),
-        'vacunas_aplicadas'=>$this->request->getPost('txt_vacunas'),
-        'tratamiento'=>$this->request->getPost('txt_tratamiento'),
-        'fecha_revision'=>$this->request->getPost('txt_fecha')
+    $datos = [
+        'id_animal' => $this->request->getPost('txt_id_animal'),
+        'vacunas_aplicadas' => $this->request->getPost('txt_vacunas'),
+        'tratamiento' => $this->request->getPost('txt_tratamiento'),
+        'fecha_revision' => $this->request->getPost('txt_fecha')
     ];
 
     print_r($datos);
     $historial->insert($datos);
+    session()->setFlashdata('success', 'Registro agregado correctamente.');
     return $this->index();
 }
 

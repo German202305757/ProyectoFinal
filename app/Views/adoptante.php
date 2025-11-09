@@ -120,10 +120,7 @@
                         </div>
                         <div class="modal-body">
                             <form action="<?= base_url('agregar_adoptante'); ?>" method="post">
-                                <div class="mb-2">
-                                    <label for="txt_codigo" class="form-label">ID del Adoptante</label>
-                                    <input type="number" name="txt_codigo" id="txt_codigo" class="form-control">
-                                </div>
+                                
                                 <div class="mb-2">
                                     <label for="txt_nombre" class="form-label">Nombre</label>
                                     <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
