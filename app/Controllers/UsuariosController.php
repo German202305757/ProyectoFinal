@@ -103,7 +103,6 @@ class UsuariosController extends BaseController
     } else {
         $usuario->update($nuevoCodigo, $datos);
     }
-
     session()->setFlashdata('success', 'Usuario modificado correctamente.');
     return redirect()->to(base_url('usuarios'));
 }
