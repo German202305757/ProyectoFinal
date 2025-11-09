@@ -81,12 +81,18 @@
 
                   ?>
                     
+                    <?php if (session()->getFlashdata('success')): ?>
+  <div class="alert alert-success" role="alert">
+    <?= session()->getFlashdata('success'); ?>
+  </div>
+<?php endif; ?>
+
                     <div class="d-grid">
                       <button class="btn btn-primary btn-lg" type="submit">Ingresar</button>
                     </div>
                     
                     <div class="text-center mt-4">
-                      <p class="small mb-0">¿No tienes una cuenta? <a href="#" class="text-decoration-none">Regístrate aquí</a></p>
+                      <p class="small mb-0">¿No tienes una cuenta? <a href="<?= base_url('registro') ?>" class="text-decoration-none">Regístrate aquí</a></p>
                     </div>
                     
                   </form>

@@ -93,3 +93,7 @@ $routes->get('cerrar_sesion','LoginController::cerrarSesion');
 $routes->get('menu_admin','Home::verMenuAdmin');
 $routes->get('menu_editor','Home::verMenuEditor');
 $routes->get('menu_cliente','Home::verMenuClientes');
+
+//Registro
+$routes->get('registro', 'RegistroController::index');
+$routes->post('registro/guardar', 'RegistroController::guardar');
