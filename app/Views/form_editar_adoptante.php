@@ -69,8 +69,8 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
 </body>
-        <footer class="text-center mt-4 mb-3 text-secondary">
-            Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Adoptantes
-        </footer>
+<footer class="text-center mt-4 mb-3 text-secondary">
+    Refugio de Animales © <?= date('Y'); ?> | Sistema de Gestión de Adoptantes
+</footer>
 
 </html>

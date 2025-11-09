@@ -97,7 +97,7 @@
         <p class="mb-0">
           <a href="#" class="text-white">Volver arriba</a> |
           <a href="#" class="text-white">Política de Privacidad</a> |
-          <a href="#" class="text-white">Créditos</a>
+          <a href="<?= base_url('creditos') ?>" class="text-white">Créditos</a>
         </p>
       </div>
     </footer>

@@ -10,6 +10,7 @@ $routes->get('/', 'Home::index');
 $routes->get('menu_admin','Home::verMenuAdmin');
 $routes->get('menu_editor','Home::verMenuEditor');
 $routes->get('menu_cliente','Home::verMenuClientes');
+$routes->get('/creditos', 'CreditosController::index');
 
 $routes->get('citas','CitasController::index');
 $routes->get('mascotas','MascotasController::index');
